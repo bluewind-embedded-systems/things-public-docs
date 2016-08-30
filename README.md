@@ -20,12 +20,19 @@ very well the needs of a demonstration application and proof of concept.
 In case you're interested at using the platform please drop an email and you
 will be contacted with details.
 
+### Guides and documents
+
+* [Overview of Things as a IoT cloud platform](description.md)
+* [How to use Greenwich (another Bluewind product) on Things](deploy-greenwich.md)
+
+
 Resources
 ---------
 
+* http://www.bluewind.it/things
+* http://www.bluewind.it/greenwich
 * http://github.com/bluewindthings
 * http://things.bluewind.it
-
 
 Contact
 ---------
