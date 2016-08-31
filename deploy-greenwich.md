@@ -2,10 +2,10 @@
 
 ## Why are you here?
 
-- you're evaluating or using at least one Greenwich product from Choral;
+- you're evaluating or using at least one Greenwich product from Bluewind;
 - you don't have or don't want to use your own public server
   for collecting location data from Greenwich;
-- you do want to consume (use) location data from Greenwich
+- you want to consume (use) location data from Greenwich
   on your own application, or examine the quality of data during
   an evaluation session;
 - you want to be up and running in minutes instead of hours or days,
@@ -13,18 +13,19 @@
   public IP addresses, servers, bandwidth.
 
 You're in the right place: Greenwich will send it's location
-and related data on a cloud platform,
+and related data to our own cloud platform,
 and you will query a very simple database for the records
-at any time during or after the data has been produced.
+at any time after the data has been produced.
 Persistence will last forever, how and when to use the data is up
 to your business model.
-You don't need to understand how Greenwich talks to the cloud server.
+You don't need to understand how Greenwich talks to the cloud server but
+an overview is included in this document.
 
 ## The short story
 
 Each Greenwich module by default sends location data to a cloud server
-hosted at ```http://things.bluewind.it```:
-the ***Things*** service.
+hosted at ```http://things.bluewind.it```: the ***Things*** service.
+
 The cloud server is dimensioned to reliably process millions of messages
 from hundreds of thousands modules located anywhere.
 The service is not limited to Greenwich and location data;
@@ -40,17 +41,16 @@ Greenwich (the information producer) sends its data at any time
 using secure and managed communication channels.
 
 You (the information consumer) will find organized data
-on a very simple database built on the MySQL engine.
+on a very simple database built with a MySQL engine.
 You don't need to start or stop acquisition,
 and you will not have to log and manage connections time and bandwidth.
 You will simply query a remote database and consume rows of data.
 
 ![Things and Greenwich](assets/things_gw.png)
 
-Following example shows how to connect and prepare a standard query
-for stored messages,
-for a given user (console on a Linux based host with MySQL installed,
-the same applies to Microsoft Windows).
+The following example shows how to connect and prepare a standard query
+for stored messages, for a given user (console on a Linux based host
+with MySQL installed, the same applies to Microsoft Windows).
 Data extracted here show some location points and voltage measured
 on the internal battery of a Greenwich module:
 
@@ -81,13 +81,12 @@ mysql> SELECT * FROM `messages` WHERE topic_id IN ('14','15') LIMIT 9;
 +----+-------------+---------------------+---------------------+----------+
 ```
 
-## More technical details
+## Technical details
 
 There's really no need to understand more technical details in order to
-start using your new Greenwich module from your simple
-example application or host console.
-But as soon as you start writing your new killing application
-you need to have a deeper understanding of
+start using your new Greenwich module from your simple example
+application or host console. But as soon as you start writing your
+new killing application you need to have a better understanding of
 the data structure and protocols.
 
 ### Customer database queries
